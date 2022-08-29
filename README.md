@@ -1,7 +1,6 @@
-![GESTIÓN DE DATOS E INFORMACIÓN II](https://raw.githubusercontent.com/gcoronelc/UCV_GDI-2_202202-B1/master/img/portada.png)
-
 #  GESTIÓN DE DATOS E INFORMACIÓN II
 
+![GESTIÓN DE DATOS E INFORMACIÓN II](https://raw.githubusercontent.com/gcoronelc/UCV_GDI-2_202202-B1/master/img/portada.png)
 
 ![GESTIÓN DE DATOS E INFORMACIÓN II](https://raw.githubusercontent.com/gcoronelc/UCV_GDI-2_202202-B1/master/img/curso.png)
 
@@ -21,8 +20,6 @@
 - Blog: www.desarrollasoftware.com
 - Youtube: www.youtube.com/DesarrollaSoftware
 - Cooreo: ecoronelca@ucvvirtual.edu.pe
-
-
-
+- Facebook: www.facebook.com/groups/desarrollasoftware
 
 
