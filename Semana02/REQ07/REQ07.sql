@@ -60,6 +60,9 @@ FROM EduTec..CursoProgramado cp
 WHERE cp.IdCiclo like '2021%';
 GO
 
+CREATE VIEW dbo.V_REQ07 
+(CURSO,ENERO,FEBRERO,MARZO,ABRIL,MAYO,JUNIO,JULIO,AGOSTO,SETIEMBRE,OCTUBRE,NOVIEMBRE,DICIEMBRE,TOTAL)
+AS
 SELECT 
 	c.NomCurso CURSO,
 	SUM(IIF(RIGHT(cp.idciclo,2)='01', cp.PreCursoProg*cp.Matriculados,0)) "ENERO",
@@ -84,6 +87,8 @@ GO
 
 /*
 5. Verificar su resultado.
+
+
 6. Consultar la vista desde Microsoft Excel
 
 
