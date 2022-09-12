@@ -94,5 +94,29 @@ on v1.ShipCity=v2.ShipCity and v1.cantidad = v2.mayor
 order by 1,2;
 go
 
+/*
+Función de tabla de múltiples instrucciones
+*/
 
+ALTER FUNCTION dbo.fn_catalogo ( ) 
+RETURNS @tabla TABLE ( 
+	codigo int identity(1,1) primary key not null, 
+	nombre varchar(50) not null, 
+	precioCosto money not null, 
+	porcGanancia decimal(5,2) not null,
+	precioVenta money not null default 0)
+AS 
+BEGIN 
+	-- Datos
+	INSERT INTO @tabla(nombre,precioCosto,porcGanancia) values('Televisor', 1500.00, 0.40); 
+	INSERT INTO @tabla(nombre,precioCosto,porcGanancia) values('Refrigeradora', 1450.00,0.60); 
+	INSERT INTO @tabla(nombre,precioCosto,porcGanancia) values('Lavadora', 1350.00,0.58); 
+	-- Precio de venta
+	update @tabla
+	set precioVenta = precioCosto * (1+porcGanancia);
+	RETURN; 
+END; 
+GO 
 
+SELECT * FROM dbo.fn_catalogo(); 
+GO
