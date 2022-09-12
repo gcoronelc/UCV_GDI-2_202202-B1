@@ -50,12 +50,49 @@ GO
 SELECT * FROM dbo.fn_empleados(102); 
 GO
 
+/*
+Cantidad de empleados por departamento y que porcente representa del total.
+*/
+
+alter function dbo.fn_empleados()
+returns table
+as
+return
+with
+v1 as (select count(1) total from empleado),
+v2 as (
+	select iddepartamento, count(1) empleados
+	from empleado
+	group by iddepartamento)
+select v2.*, v2.empleados*100.0/v1.total porcentaje
+from v1 cross join v2;
+go
 
 
+select * from dbo.fn_empleados();
+go
 
+/*
+Se necesita saber cuál es el producto más solicitado en cada ciudad, se debe mostrar los empates.
+Se debe considerar la ciudad de reparto, columna Orders.ShipCity.
+*/
 
-
-
+WITH
+v1 as (
+	select o.ShipCity, od.ProductID, sum(od.Quantity) cantidad
+	from Northwind..Orders o
+	join Northwind..[Order Details] od 
+	on o.OrderID = od.OrderID
+	group by o.ShipCity, od.ProductID),
+v2 as (
+	select ShipCity, max(cantidad) mayor 
+	from v1
+	group by ShipCity)
+select v1.*
+from v1 join v2 
+on v1.ShipCity=v2.ShipCity and v1.cantidad = v2.mayor
+order by 1,2;
+go
 
 
 
