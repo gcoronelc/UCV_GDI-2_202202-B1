@@ -7,3 +7,8 @@ FROM empleado
 group by nombre;
 go
 
+
+
+
+
+

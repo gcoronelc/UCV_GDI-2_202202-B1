@@ -4,7 +4,7 @@ Los triggers tambien se pueden usar para prevenir acciones incorrectas.
 SELECT * FROM CURSO;
 GO
 
-alter trigger TR_ELIMINAR_CURSO
+CREATE trigger TR_ELIMINAR_CURSO
 on CURSO
 for delete
 as
@@ -27,5 +27,5 @@ GO
 delete from curso where cur_id=1;
 go
 
-delete from curso where cur_id=4;
+delete from curso where cur_id=5;
 go
