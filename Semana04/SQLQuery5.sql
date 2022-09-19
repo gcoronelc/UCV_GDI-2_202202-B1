@@ -1,7 +1,6 @@
 use RH;
 go
 
-
 create table SueldoLog(
 	id int not null identity,
 	fecha date not null,
@@ -38,13 +37,13 @@ select * from empleado;
 go
 
 update empleado 
-set sueldo = 40000
+set sueldo = 60000
 where idempleado='E0001';
 go
 
 
 insert into empleado 
-values ('E8888','AAAAAA', 'BBBBBB', '20050120', 'algo@gmail.com',
+values ('E8889','AAAAAA', 'BBBBBB', '20050120', 'algo@gmail.com',
 	'99999999', 'C03', 103, 18500, null, 'E0001' );
 
 
@@ -54,8 +53,8 @@ select * from SueldoLog;
 go
 
 update empleado 
-set nombre = 'Carlos', apellido = 'Alcantara'
-where idempleado='E8888';
+set nombre = 'Jose', apellido = 'Torres'
+where idempleado='E8889';
 go
 
 

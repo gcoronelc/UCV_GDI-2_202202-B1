@@ -25,7 +25,7 @@ CREATE TABLE dbo.DDLEvents (
 go
 
 
-select * from DDLEvents;
+select * from AuditDB..DDLEvents;
 go
 
 
@@ -57,10 +57,13 @@ GO
 
 CREATE PROC dbo.usp_GetDBVersion
 AS 
-	SELECT @@version AS Vrsion;
+	SELECT @@version AS Version;
 GO
 
 drop procedure dbo.usp_GetDBVersion;
+go
+
+create table demo(a varchar(100));
 go
 
 select * from AuditDB..DDLEvents;
