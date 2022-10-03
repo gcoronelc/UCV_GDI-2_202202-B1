@@ -1,6 +1,6 @@
 ANALISIS DE PROCESOS
 -------------------------------------------
-1.- Ingreso del paciente
+1.- Ingreso del paciente (Hospitalización)
 
 
 

@@ -1,0 +1,11 @@
+SELECT 
+	(200+((1000*0.1)/2)) VALOR1,
+	200+1000*0.1/2 VALOR2;
+
+
+SELECT 50 + NULL;
+
+SELECT COUNT(comision) FROM RH..empleado;
+
+
+
