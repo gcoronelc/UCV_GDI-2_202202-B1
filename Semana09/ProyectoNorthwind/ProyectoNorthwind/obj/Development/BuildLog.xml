@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
-    <Name>Poblar_Northwind_DM</Name>
-    <LastWriteTime>2022-10-24T22:04:53.7359714Z</LastWriteTime>
+    <Name>ProyectoNorthwind</Name>
+    <LastWriteTime>2022-10-24T21:54:18.2742704Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>Package.dtsx</Name>
-      <LastWriteTime>2022-10-24T22:04:53.6815372Z</LastWriteTime>
+      <LastWriteTime>2022-10-24T22:03:35.2041841Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
