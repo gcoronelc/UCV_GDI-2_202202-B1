@@ -6,10 +6,10 @@ using System.Data.SqlClient;
 
 namespace CapaService
 {
-    public class CuentaService : GeneralService 
+    public class CuentaService : GeneralService
     {
 
-        public string CrearCuenta(string cliente, string moneda, double importe, string clave,string empleado)
+        public string CrearCuenta(string cliente, string moneda, double importe, string clave, string empleado)
         {
             // Variables locales
             string cuenta = "";
@@ -33,9 +33,9 @@ namespace CapaService
                     cmd.Parameters.Add("@IMPORTE", SqlDbType.Decimal).Value = importe;
                     cmd.Parameters.Add("@CLAVE", SqlDbType.VarChar).Value = clave;
                     cmd.Parameters.Add("@EMPLEADO", SqlDbType.VarChar).Value = empleado;
-                    cmd.Parameters.Add("@CODIGO", SqlDbType.VarChar,8).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@CODIGO", SqlDbType.VarChar, 8).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("@ESTADO", SqlDbType.Int).Direction = ParameterDirection.Output;
-                    cmd.Parameters.Add("@MENSAJE", SqlDbType.VarChar,1000).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@MENSAJE", SqlDbType.VarChar, 1000).Direction = ParameterDirection.Output;
                     // Ejecutar el procedimiento
                     cmd.ExecuteNonQuery();
                     // Recoger los parametros de salida
@@ -45,19 +45,19 @@ namespace CapaService
                     // Se libera el objeto Command
                     cmd.Dispose();
                 }
-catch (Exception e)
+                catch (Exception e)
                 {
-cuenta = "";
-if (this.Estado == 1)
-{
-    this.Estado = -1;
-    this.Mensaje = e.Message;
-}
-}
-}
-// Reporte
-return cuenta;
-}
+                    cuenta = "";
+                    if (this.Estado == 1)
+                    {
+                        this.Estado = -1;
+                        this.Mensaje = e.Message;
+                    }
+                }
+            }
+            // Reporte
+            return cuenta;
+        }
 
-}
+    }
 }

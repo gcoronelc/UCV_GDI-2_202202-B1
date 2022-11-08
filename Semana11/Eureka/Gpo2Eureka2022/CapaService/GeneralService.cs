@@ -6,7 +6,7 @@ namespace CapaService
 {
     public class GeneralService
     {
-        public string CadenaConexion { get; set; }
+        protected string CadenaConexion { get; set; }
 
         // Mensaje de error
         public string Mensaje { get; set; }
