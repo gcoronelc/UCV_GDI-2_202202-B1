@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaService;
 
 namespace Gpo2Eureka2022
 {
@@ -25,7 +24,7 @@ namespace Gpo2Eureka2022
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormCreaCuenta());
+            Application.Run(new FormLogon());
             
         }
     }
