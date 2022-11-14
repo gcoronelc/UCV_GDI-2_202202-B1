@@ -21,8 +21,7 @@ BEGIN
 		if(@cont=0)
 		begin
 			SET @ESTADO = -1;
-			SET @MENSAJE = 'Codigo de empleado no existe.';
-			THROW 51000, 'Empleado no existe.', 1;
+			THROW 51000, 'Codigo de empleado no existe.', 1;
 		end;
 		-- Validar que el empleado se encuentre laborando actualmente.
 		select @cont = count(1) from asignado 
@@ -30,18 +29,28 @@ BEGIN
 		if(@cont<>1)
 		begin
 			SET @ESTADO = -1;
-			SET @MENSAJE = 'El empleado no labora en esta empresa..';
-			THROW 51000, 'Empleado no esta laborando.', 1;
+			THROW 51000, 'El empleado no labora en esta empresa.', 1;
 		end;
 		-- Validar la moneda
 		select @cont = count(1) from moneda where chr_monecodigo=@MONEDA;
 		if(@cont<>1)
 		begin
 			SET @ESTADO = -1;
-			SET @MENSAJE = 'La moneda es incorrecta.';
-			THROW 51000, 'Moneda incorrecta.', 1;
+			THROW 51000, 'La moneda es incorrecta.', 1;
 		end;
-		
+		-- Validar el cliente
+		select @cont = count(1) from cliente where chr_cliecodigo=@CLIENTE;
+		if(@cont<>1)
+		begin
+			SET @ESTADO = -1;
+			THROW 51000, 'El cliente no existe en la base de datos.', 1;
+		end;
+		-- Validar el cliente
+		if(@IMPORTE<=0.0)
+		begin
+			SET @ESTADO = -1;
+			THROW 51000, 'El importe de apertura debe ser un valor mayor que cero.', 1;
+		end;
 		-- Generar codigo de la cuenta
 		SELECT @sucursal=chr_sucucodigo FROM Asignado
 		WHERE chr_emplcodigo=@EMPLEADO AND dtt_asigfechabaja IS NULL;
@@ -66,18 +75,39 @@ BEGIN
 		begin
 			set @ESTADO = -1;
 			set @MENSAJE = 'Error en el proceso, intentelo nuevamente.';
+		end
+		else 
+		begin
+			set @MENSAJE = ERROR_MESSAGE();
 		end;
-		print ERROR_MESSAGE();
 		ROLLBACK TRANSACTION; 
 	END CATCH;
 END;
 GO
 
+-- Prueba: Importe negativo
+DECLARE @CODIGO CHAR(8), @ESTADO INT,@MENSAJE VARCHAR(1000);
+EXEC USP_UCV_GPO_B_CREAR_CUENTA '00014','01',-7800.0,'123456','0007',
+	@CODIGO OUT, @ESTADO OUT, @MENSAJE OUT;
+PRINT 'CODIGO: ' + @CODIGO;
+PRINT CONCAT('ESTADO: ',@ESTADO);
+PRINT CONCAT('MENSAJE: ', @MENSAJE);
+GO
+
+
+-- Prueba: Codigo de cliente no existe
+DECLARE @CODIGO CHAR(8), @ESTADO INT,@MENSAJE VARCHAR(1000);
+EXEC USP_UCV_GPO_B_CREAR_CUENTA '09914','01',7800.0,'123456','0007',
+	@CODIGO OUT, @ESTADO OUT, @MENSAJE OUT;
+PRINT 'CODIGO: ' + @CODIGO;
+PRINT CONCAT('ESTADO: ',@ESTADO);
+PRINT CONCAT('MENSAJE: ', @MENSAJE);
+GO
 
 
 -- Prueba: Codigo de moneda no existe
 DECLARE @CODIGO CHAR(8), @ESTADO INT,@MENSAJE VARCHAR(1000);
-EXEC USP_CREAR_CUENTA '00014','08',7800.0,'123456','0007',
+EXEC USP_UCV_GPO_B_CREAR_CUENTA '00014','08',7800.0,'123456','0007',
 	@CODIGO OUT, @ESTADO OUT, @MENSAJE OUT;
 PRINT 'CODIGO: ' + @CODIGO;
 PRINT CONCAT('ESTADO: ',@ESTADO);
@@ -86,7 +116,7 @@ GO
 
 -- Prueba: Codigo de empleado no labora actualmente
 DECLARE @CODIGO CHAR(8), @ESTADO INT,@MENSAJE VARCHAR(1000);
-EXEC USP_CREAR_CUENTA '00014','01',7800.0,'123456','0003',
+EXEC USP_UCV_GPO_B_CREAR_CUENTA '00014','01',7800.0,'123456','0003',
 	@CODIGO OUT, @ESTADO OUT, @MENSAJE OUT;
 PRINT 'CODIGO: ' + @CODIGO;
 PRINT CONCAT('ESTADO: ',@ESTADO);
@@ -106,7 +136,7 @@ GO
 
 -- Prueba ok
 DECLARE @CODIGO CHAR(8), @ESTADO INT,@MENSAJE VARCHAR(1000);
-EXEC USP_CREAR_CUENTA '00014','01',7800.0,'123456','0005',
+EXEC USP_UCV_GPO_B_CREAR_CUENTA '00014','01',7800.0,'123456','0005',
 	@CODIGO OUT, @ESTADO OUT, @MENSAJE OUT;
 PRINT 'CODIGO: ' + @CODIGO;
 PRINT CONCAT('ESTADO: ',@ESTADO);
