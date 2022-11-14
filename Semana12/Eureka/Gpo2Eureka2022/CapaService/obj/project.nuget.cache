@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yQ+Fut+pAfqpcro3BhanHEgQng+GKjBgFGboOXIvvqUvSgROWYXB6470b7OOyWF6tDmFN6DQ0VyEkBKAMdGXIQ==",
+  "dgSpecHash": "u9U2X7VPNgTr5L177zDQPrtGYnKnIPFVvKaW1DntwjOTKIQwj6JkQRh8/n06tLGq7VXbFtgM8Q+3kxqCdlXG/A==",
   "success": true,
-  "projectFilePath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj",
+  "projectFilePath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gustavo Coronel\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Gustavo Coronel\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

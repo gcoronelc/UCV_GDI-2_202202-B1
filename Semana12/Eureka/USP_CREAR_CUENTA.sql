@@ -1,5 +1,5 @@
 
-alter PROCEDURE USP_CREAR_CUENTA(
+ALTER PROCEDURE DBO.USP_UCV_GPO_B_CREAR_CUENTA(
 	@CLIENTE CHAR(5),
 	@MONEDA CHAR(2),
 	@IMPORTE MONEY,
@@ -33,7 +33,14 @@ BEGIN
 			SET @MENSAJE = 'El empleado no labora en esta empresa..';
 			THROW 51000, 'Empleado no esta laborando.', 1;
 		end;
-		-- Falta validación
+		-- Validar la moneda
+		select @cont = count(1) from moneda where chr_monecodigo=@MONEDA;
+		if(@cont<>1)
+		begin
+			SET @ESTADO = -1;
+			SET @MENSAJE = 'La moneda es incorrecta.';
+			THROW 51000, 'Moneda incorrecta.', 1;
+		end;
 		
 		-- Generar codigo de la cuenta
 		SELECT @sucursal=chr_sucucodigo FROM Asignado
@@ -68,9 +75,16 @@ GO
 
 
 
+-- Prueba: Codigo de moneda no existe
+DECLARE @CODIGO CHAR(8), @ESTADO INT,@MENSAJE VARCHAR(1000);
+EXEC USP_CREAR_CUENTA '00014','08',7800.0,'123456','0007',
+	@CODIGO OUT, @ESTADO OUT, @MENSAJE OUT;
+PRINT 'CODIGO: ' + @CODIGO;
+PRINT CONCAT('ESTADO: ',@ESTADO);
+PRINT CONCAT('MENSAJE: ', @MENSAJE);
+GO
 
-
--- Prueba: Codigo de empleado no iabora actualmente
+-- Prueba: Codigo de empleado no labora actualmente
 DECLARE @CODIGO CHAR(8), @ESTADO INT,@MENSAJE VARCHAR(1000);
 EXEC USP_CREAR_CUENTA '00014','01',7800.0,'123456','0003',
 	@CODIGO OUT, @ESTADO OUT, @MENSAJE OUT;
@@ -82,7 +96,7 @@ GO
 
 -- Prueba: Codigo de empleado no existe
 DECLARE @CODIGO CHAR(8), @ESTADO INT,@MENSAJE VARCHAR(1000);
-EXEC USP_CREAR_CUENTA '00014','01',7800.0,'123456','0999',
+EXEC USP_UCV_GPO_B_CREAR_CUENTA '00014','01',7800.0,'123456','0999',
 	@CODIGO OUT, @ESTADO OUT, @MENSAJE OUT;
 PRINT 'CODIGO: ' + @CODIGO;
 PRINT CONCAT('ESTADO: ',@ESTADO);

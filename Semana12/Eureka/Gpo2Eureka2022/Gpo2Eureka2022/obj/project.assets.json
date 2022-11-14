@@ -477,11 +477,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\Gpo2Eureka2022\\Gpo2Eureka2022.csproj",
+      "projectUniqueName": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\Gpo2Eureka2022\\Gpo2Eureka2022.csproj",
       "projectName": "Gpo2Eureka2022",
-      "projectPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\Gpo2Eureka2022\\Gpo2Eureka2022.csproj",
+      "projectPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\Gpo2Eureka2022\\Gpo2Eureka2022.csproj",
       "packagesPath": "C:\\Users\\Gustavo Coronel\\.nuget\\packages\\",
-      "outputPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\Gpo2Eureka2022\\obj\\",
+      "outputPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\Gpo2Eureka2022\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gustavo Coronel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -498,8 +498,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj": {
-              "projectPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj"
+            "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj": {
+              "projectPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj"
             }
           }
         }

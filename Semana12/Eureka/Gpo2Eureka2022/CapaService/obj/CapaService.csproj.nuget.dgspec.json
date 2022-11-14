@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj": {}
+    "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj": {}
   },
   "projects": {
-    "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj": {
+    "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj",
+        "projectUniqueName": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj",
         "projectName": "CapaService",
-        "projectPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj",
+        "projectPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj",
         "packagesPath": "C:\\Users\\Gustavo Coronel\\.nuget\\packages\\",
-        "outputPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana11\\Eureka\\Gpo2Eureka2022\\CapaService\\obj\\",
+        "outputPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Gustavo Coronel\\AppData\\Roaming\\NuGet\\NuGet.Config",
