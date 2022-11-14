@@ -131,10 +131,21 @@
           }
         }
       },
+      "CapaModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/CapaModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CapaModel.dll": {}
+        }
+      },
       "CapaService/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "CapaModel": "1.0.0",
           "System.Data.SqlClient": "4.8.4"
         },
         "compile": {
@@ -460,6 +471,11 @@
         "version.txt"
       ]
     },
+    "CapaModel/1.0.0": {
+      "type": "project",
+      "path": "../CapaModel/CapaModel.csproj",
+      "msbuildProject": "../CapaModel/CapaModel.csproj"
+    },
     "CapaService/1.0.0": {
       "type": "project",
       "path": "../CapaService/CapaService.csproj",
@@ -468,6 +484,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "CapaModel >= 1.0.0",
       "CapaService >= 1.0.0"
     ]
   },
@@ -498,6 +515,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaModel\\CapaModel.csproj": {
+              "projectPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaModel\\CapaModel.csproj"
+            },
             "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj": {
               "projectPath": "D:\\GITHUB\\UCV\\UCV_GDI-2_202202-B1\\Semana12\\Eureka\\Gpo2Eureka2022\\CapaService\\CapaService.csproj"
             }
