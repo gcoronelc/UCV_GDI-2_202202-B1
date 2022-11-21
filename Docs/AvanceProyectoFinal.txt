@@ -24,7 +24,7 @@ Avance de Unidad 3
 2.- Completar el informe 
 3.- Programación de los procesos de negocio con SP
 4.- Implementar la aplicación con Visual Studio y C#
-5.- Enlace de video de exposición
+5.- Exposicion en vivo (Con PPT y demostracion en vivo del sistema)
 
 En la exposición se debe demostrar flujos de negocio.
 
@@ -54,14 +54,6 @@ Sistema de Almacen: Ingreso de materiales
 -----------------------------------------------------
 1.- Pedido de materiales
 2.- Registro de ingreso de materiales
-
-
-
-
-
-
-
-
 
 
 
